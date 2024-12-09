@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Specifies the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on all devices -->
+  
+  <title>Energy Pulse Map</title> <!-- Sets the title of the webpage -->
+
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="styles.css"> <!-- Stylesheet for custom design and layout -->
+
+  <!-- Spline Viewer Script -->
+  <!-- Integrates 3D models into the webpage using Spline Tool -->
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.48/build/spline-viewer.js"></script>
+
+  <!-- Leaflet.js CSS -->
+  <!-- Provides styles for interactive maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+</head>
+<body>
+  <!-- Main container for the layout -->
+  <div id="container">
+    
+    <!-- Sidebar Section -->
+    <aside id="sidebar">
+      <h1>Energy Pulse Map</h1> <!-- Header for the application -->
+      <p>Explore NYC's energy usage through an interactive and artistic map.</p> <!-- Short description -->
+
+      <!-- Details Section -->
+      <div id="details">
+        <h2>Region Details</h2> <!-- Subheader for region-specific details -->
+        <p id="region-name">Region: <span>--</span></p> <!-- Placeholder for region name -->
+        <p id="region-usage">Energy Usage: <span>--</span> MWh</p> <!-- Placeholder for energy usage -->
+        <p id="region-renewable">Renewable Energy %: <span>--</span>%</p> <!-- Placeholder for renewable percentage -->
+      </div>
+
+      <!-- Simulation Controls -->
+      <div id="simulation">
+        <h2>Simulation</h2> <!-- Subheader for simulation tools -->
+
+        <!-- Renewable Energy Slider -->
+        <label for="renewable-slider">Change Renewable Energy (%)</label>
+        <input type="range" id="renewable-slider" min="0" max="100" step="1">
+        <p>Renewable Percentage: <span id="renewable-value">0%</span></p> <!-- Displays slider value -->
+
+        <!-- Efficiency Improvement Slider -->
+        <label for="efficiency-slider">Improve Energy Efficiency (%)</label>
+        <input type="range" id="efficiency-slider" min="0" max="100" step="1">
+        <p>Efficiency Improvement: <span id="efficiency-value">0%</span></p> <!-- Displays slider value -->
+      </div>
+
+      <!-- Year Selection -->
+      <div id="year-selection">
+        <h2>Year Selection</h2> <!-- Subheader for year control -->
+        <label for="year-slider">Select Year: <span id="selected-year">2019</span></label>
+        <input type="range" id="year-slider" min="2019" max="2024" value="2019" step="1"> <!-- Year slider -->
+      </div>
+    </aside>
+
+    <!-- Map Container -->
+    <main id="map-container">
+      <div id="map"></div> <!-- Placeholder for Leaflet.js map -->
+    </main>
+  </div>
+
+  <!-- Spline Viewer Section -->
+  <!-- Displays a 3D model created with Spline -->
+  <div id="spline-container">
+    <spline-viewer url="https://prod.spline.design/aMaDGUZppwSt0ci3/scene.splinecode"></spline-viewer>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Leaflet.js library for map functionalities -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  
+  <script src="script.js"></script>
+  <script src="simulation.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Layout */
+#container {
+  display: flex;
+  height: 100vh;
+}
+
+#sidebar {
+  width: 300px;
+  background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+  box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+#map-container {
+  flex: 1;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Sidebar Styles */
+#sidebar h1 {
+  color: #00d1ff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#sidebar p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#details, #simulation, #year-selection {
+  margin-bottom: 20px;
+  border: 1px solid #00d1ff;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#details h2, #simulation h2, #year-selection h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#details p span, #simulation span, #year-selection span {
+  color: #00ffa8;
+}
+
+/* Sliders */
+#simulation label, #year-selection label {
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+}
+
+#simulation input[type="range"], #year-selection input[type="range"] {
+  width: 100%;
+  margin: 5px 0;
+}
+
+#simulation p, #year-selection p {
+  font-size: 12px;
+  margin: 5px 0 10px;
+}
+
+/* Back Button */
+.back-button {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border: 1px solid #00d1ff;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.back-button button {
+  color: #ffffff;
+  background: #00d1ff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.back-button button:hover {
+  background: #00a3cc;
+}
+
+/* Global Glow Effect for Text */
+.text-glow {
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.text-glow:hover {
+  color: #00ffa8; /* Change color on hover */
+  text-shadow: 0 0 5px #00ffa8, 0 0 10px #00d1ff, 0 0 20px #00d1ff;
+}
+
+/* Glow Effect for Circles */
+.glowing-circle {
+  animation: glow 1s infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px #00ffa8);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px #00d1ff);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #00ffa8);
+  }
+}
+
+#spline-container {
+  position: absolute;
+  bottom: 8px;
+  left: 5px;
+  width: 330px; /* Adjust as needed */
+  height: 280px; /* Adjust as needed */
+  z-index: 1000; /* Ensure it appears above other elements */
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+}
+
+spline-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
